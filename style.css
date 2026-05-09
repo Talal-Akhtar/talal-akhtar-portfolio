@@ -302,24 +302,6 @@ section { padding: 7rem 4rem; position: relative; }
   color: var(--muted); line-height: 1.8; margin-bottom: 1rem;
   font-size: 1rem;
 }
-.about-stats {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 1.5rem; margin-top: 2.5rem;
-}
-.stat-box {
-  padding: 1.2rem; border: 1px solid var(--border);
-  background: var(--surface);
-  transition: border-color 0.3s, transform 0.3s;
-}
-.stat-box:hover { border-color: var(--accent); transform: translateY(-4px); }
-.stat-num {
-  font-size: 2rem; font-weight: 800; color: var(--accent);
-  letter-spacing: -0.04em;
-}
-.stat-lbl {
-  font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted);
-  letter-spacing: 0.06em; margin-top: 0.2rem;
-}
 
 /* ─── Skills ───────────────────────────────────── */
 #skills { background: var(--surface); border-top: 1px solid var(--border); }

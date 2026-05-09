@@ -39,22 +39,3 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.12 });
 reveals.forEach(r => observer.observe(r));
-
-// ── Animated counters ───────────────────────────
-const counters = document.querySelectorAll('.counter');
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    const el = e.target;
-    const target = +el.dataset.target;
-    let current = 0;
-    const step = target / 50;
-    const interval = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.textContent = Math.floor(current) + (target === 99 ? '%' : '+');
-      if (current >= target) clearInterval(interval);
-    }, 28);
-    counterObs.unobserve(el);
-  });
-}, { threshold: 0.5 });
-counters.forEach(c => counterObs.observe(c));
