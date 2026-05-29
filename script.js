@@ -94,19 +94,3 @@
     wm.style.transform = `translateY(calc(-50% + ${window.scrollY * 0.3}px))`;
   }, { passive: true });
 })();
-
-/* ── Mobile nav toggle ─────────────────────────── */
-(function () {
-  const topbar = document.getElementById('topbar');
-  const toggle = document.getElementById('nav-toggle');
-  if (!topbar || !toggle) return;
-
-  toggle.addEventListener('click', () => {
-    const isOpen = topbar.classList.toggle('mobile-open');
-    toggle.setAttribute('aria-expanded', isOpen);
-  });
-
-  topbar.querySelectorAll('.tb-nav a').forEach(link => {
-    link.addEventListener('click', () => topbar.classList.remove('mobile-open'));
-  });
-})();
