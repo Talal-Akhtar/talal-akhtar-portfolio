@@ -1,250 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Muhammad Talal Akhtar — Portfolio</title>
-  
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  
-  <!-- CSS File -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Custom Cursor -->
-  <div id="cursor">
-    <div class="dot"></div>
-    <div class="ring"></div>
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-counter" id="lcount">0</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="lbar"></div></div>
+  <div class="loader-label">INITIALISING PORTFOLIO</div>
+</div>
+
+<!-- Cursor -->
+<div id="cur"><div class="c-dot"></div><div class="c-ring"></div></div>
+
+<!-- Nav -->
+<nav id="topbar">
+  <a href="#hero" class="tb-logo">Talal<span>.</span>AKHTAR</a>
+  <ul class="tb-nav">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="Muhammad_Talal_Akhtar_Resume.pdf" download title="Download Resume">Resume</a></li>
+  </ul>
+  <div class="tb-right">
+    <a href="#contact" class="tb-cta"><span>Get In Touch</span></a>
   </div>
+</nav>
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <a href="#hero" class="nav-logo">Talal<span>.</span>Akhtar</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="Muhammad_Talal_Akhtar_Resume.pdf" download="Muhammad_Talal_Akhtar_Resume.pdf" title="Download Resume">Resume</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">GET IN TOUCH</a>
-  </nav>
-
-  <!-- ── Hero ──────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-grid"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-
-    <div class="hero-inner">
-      <p class="hero-tag">ASPIRING SOFTWARE DEVELOPER </p>
-      <h1 class="hero-name">
-        <span class="line"><span class="word">Hello, I'm</span></span>
-        <span class="line"><span class="word accent-word">Talal Akhtar</span></span>
-      </h1>
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-rule"></div>
+  <div class="hero-watermark">TA</div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span class="hero-eyebrow-text">Aspiring Software Developer &middot; FAST-NUCES </span>
+    </p>
+    <h1 class="hero-name">
+      <span class="ln"><span class="wd">Hello,</span></span>
+      <span class="ln"><span class="wd">I&rsquo;m <span class="italic-name">Talal Akhtar</span></span></span>
+    </h1>
+    <div class="hero-bottom">
       
       <div class="hero-actions">
-        <a href="#projects" class="btn-primary">View My Projects →</a>
-        <a href="#contact" class="btn-ghost">Let's Talk</a>
+        <a href="#projects" class="btn-fill"><span>View Projects &rarr;</span></a>
+        <a href="#contact" class="btn-outline">Let&rsquo;s Talk</a>
       </div>
-    </div>
-
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      SCROLL DOWN
-    </div>
-  </section>
-
-  <!-- ── Marquee ────────────────────────────────── -->
-  <div class="marquee-wrap">
-    <div class="marquee-track">
-      <!-- duplicated for seamless loop -->
-      <span class="marquee-item"><span>✦</span> C++</span>
-      <span class="marquee-item"><span>✦</span> MERN STACK</span>
-      <span class="marquee-item"><span>✦</span> JAVASCRIPT</span>
-      <span class="marquee-item"><span>✦</span> SFML</span>
-      <span class="marquee-item"><span>✦</span> REACT</span>
-      <span class="marquee-item"><span>✦</span> NODE.JS</span>
-      <span class="marquee-item"><span>✦</span> GIT</span>
-      <span class="marquee-item"><span>✦</span> OOP</span>
-      <span class="marquee-item"><span>✦</span> C++</span>
-      <span class="marquee-item"><span>✦</span> MERN STACK</span>
-      <span class="marquee-item"><span>✦</span> JAVASCRIPT</span>
-      <span class="marquee-item"><span>✦</span> SFML</span>
-      <span class="marquee-item"><span>✦</span> REACT</span>
-      <span class="marquee-item"><span>✦</span> NODE.JS</span>
-      <span class="marquee-item"><span>✦</span> GIT</span>
-      <span class="marquee-item"><span>✦</span> OOP</span>
     </div>
   </div>
+  <div class="hero-scroll">
+    <div class="scroll-tick"></div>
+    Scroll Down
+  </div>
+</section>
 
-  <!-- ── About ──────────────────────────────────── -->
-  <section id="about">
-    <div class="section-label">WHO I AM</div>
-    <div class="about-grid reveal">
-      <div class="about-image-wrap">
-        <div class="about-img-frame">
-          <img 
-            src="Picture.png" 
-            alt="Muhammad Talal Akhtar"
-            style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        </div>
-        <div class="about-corner tl"></div>
-        <div class="about-corner br"></div>
-        <div class="about-badge">
-          <span class="num"> </span>
-          <span class="lbl"> </span>
+<!-- Marquee -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item"><i>&#10022;</i> C++</span>
+    <span class="marquee-item"><i>&#10022;</i> MERN Stack</span>
+    <span class="marquee-item"><i>&#10022;</i> JavaScript</span>
+    <span class="marquee-item"><i>&#10022;</i> SFML</span>
+    <span class="marquee-item"><i>&#10022;</i> React</span>
+    <span class="marquee-item"><i>&#10022;</i> Node.js</span>
+    <span class="marquee-item"><i>&#10022;</i> Git</span>
+    <span class="marquee-item"><i>&#10022;</i> OOP</span>
+    <span class="marquee-item"><i>&#10022;</i> MongoDB</span>
+    <span class="marquee-item"><i>&#10022;</i> Express</span>
+    <span class="marquee-item"><i>&#10022;</i> C++</span>
+    <span class="marquee-item"><i>&#10022;</i> MERN Stack</span>
+    <span class="marquee-item"><i>&#10022;</i> JavaScript</span>
+    <span class="marquee-item"><i>&#10022;</i> SFML</span>
+    <span class="marquee-item"><i>&#10022;</i> React</span>
+    <span class="marquee-item"><i>&#10022;</i> Node.js</span>
+    <span class="marquee-item"><i>&#10022;</i> Git</span>
+    <span class="marquee-item"><i>&#10022;</i> OOP</span>
+    <span class="marquee-item"><i>&#10022;</i> MongoDB</span>
+    <span class="marquee-item"><i>&#10022;</i> Express</span>
+  </div>
+</div>
+
+<!-- About — Redesigned with Circle Portrait -->
+<section id="about" class="rv">
+  <div class="about-inner">
+
+    <!-- Left: circular portrait + stats -->
+    <div class="about-photo-col rv">
+      <div class="portrait-frame">
+        <div class="portrait-circle">
+          <img src="Picture.png" alt="Muhammad Talal Akhtar">
         </div>
       </div>
-      <div class="about-content">
-        <h2>Turning ideas into clean, performant code.</h2>
-        <p>Computer Science student at FAST-NUCES with hands-on experience building scalable full-stack applications using C++ and JavaScript. Strong foundation in data structures, algorithms, and object-oriented programming, with practical experience applying these concepts to solve real-world problems and design efficient, maintainable systems.</p>
-        <p>Understanding in developing MERN stack applications with RESTful APIs, JWT-based authentication, and secure user management. Skilled in designing efficient data models using MongoDB and Mongoose, implementing modular backend architectures with centralized error handling, and optimizing API communication for better performance. Additionally, built projects involving graph-based logic in C++, applying BFS and DFS for data traversal and relationship handling, with a focus on clean code, scalability, and production-oriented development.</p>
+      <div class="portrait-label">
+        <div class="portrait-label-name">Muhammad Talal Akhtar</div>
+        <div class="portrait-label-sub">FAST-NUCES &middot; Islamabad</div>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="stat-n">3+</div>
+          <div class="stat-l">Projects</div>
+        </div>
+        <div class="about-stat">
+          <div class="stat-n">2</div>
+          <div class="stat-l">Stacks</div>
+        </div>
+        <div class="about-stat">
+          <div class="stat-n">1</div>
+          <div class="stat-l">Goal</div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- ── Skills ─────────────────────────────────── -->
-  <section id="skills">
-    <div class="section-label">WHAT I DO</div>
-    <h2 class="section-title">Core <em>Expertise</em></h2>
-    <div class="skills-grid">
-      
-      <div class="skill-card reveal">
-        <div class="skill-icon">🔧</div>
-        <div class="skill-name">Full-Stack MERN Development</div>
-        <div class="skill-desc">Scalable web applications with strong focus on backend logic, API design, authentication, and session management.</div>
-        <div class="skill-tags">
-          <span class="skill-tag">MERN Stack</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Node.js</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">🗄️</div>
-        <div class="skill-name">Data Structures & Algorithms</div>
-        <div class="skill-desc">Strong foundation for efficient problem solving, optimized code, and scalable system design.</div>
-        <div class="skill-tags">
-          <span class="skill-tag">DSA</span>
-          <span class="skill-tag">Algorithms</span>
-          <span class="skill-tag">Problem Solving</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">🎮</div>
-        <div class="skill-name">Game Development (C++)</div>
-        <div class="skill-desc">2D games with collision detection, enemy AI, OOP design patterns, and complete development lifecycle.</div>
-        <div class="skill-tags">
-          <span class="skill-tag">OOP</span>
-          <span class="skill-tag">SFML</span>
-          <span class="skill-tag">Game Mechanics</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">💻</div>
-        <div class="skill-name">Development Practices & Tools</div>
-        <div class="skill-desc">Modular design, debugging, performance optimization, version control, and project management.</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Git / GitHub</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Trello</span>
-        </div>
-      </div>
-      </div>
-
-  <!-- ── Projects ───────────────────────────────── -->
-  <section id="projects">
-    <h2 class="section-title">Recent <em>Projects</em></h2>
-    <div class="projects-list reveal">
-
-      <a href="#" class="project-item">
-        <span class="project-num">01</span>
-        <div class="project-info">
-          <h3>Personal Finance Tracker (MERN)</h3>
-          <p>Finance Tracker is a full-stack MERN application that allows users to securely manage personal finances. It features JWT-based authentication, and enables users to add, view, and delete income and expense transactions. Built with React, Node.js, Express, and MongoDB using RESTful APIs.</p>
-          <div class="project-tags">
-            <span class="project-tag">MERN Stack</span>
-            <span class="project-tag">React</span>
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">Authentication</span>
-          </div>
-        </div>
-        <span class="project-arrow">↗</span>
-      </a>
-
-      <a href="#" class="project-item">
-        <span class="project-num">02</span>
-        <div class="project-info">
-          <h3>Advanced Social Network Backend (C++ DSA)</h3>
-          <p>C++ terminal-based social network backend using graphs, queues, stacks, and heaps. Supports user management, weighted friendships, recommendations, shortest paths, messaging, feeds, activity tracking with undo, community detection, and ranking.</p>
-          <div class="project-tags">
-            <span class="project-tag">C++</span>
-            <span class="project-tag">DSA</span>
-            <span class="project-tag">OOP</span>
-          </div>
-        </div>
-        <span class="project-arrow">↗</span>
-      </a>
-
-      <a href="#" class="project-item">
-        <span class="project-num">03</span>
-        <div class="project-info">
-          <h3>Xonix Game (C++ + SFML)</h3>
-          <p>2D arcade-style game with real-time rendering, collision detection, enemy AI behavior, scoring system, and full development lifecycle (design, debugging, optimization).</p>
-          <div class="project-tags">
-            <span class="project-tag">C++</span>
-            <span class="project-tag">SFML</span>
-            <span class="project-tag">Real-time</span>
-          </div>
-        </div>
-        <span class="project-arrow">↗</span>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ── Education ─────────────────────────────── -->
-  <section id="education">
-    <div class="section-label">EDUCATION</div>
-    <h2 class="section-title">Academic <em>Background</em></h2>
-    <div class="timeline reveal">
-
-      <div class="timeline-item">
-        <div class="tl-date">2024 — 2028</div>
-        <div class="tl-role">Bachelor of Science in Computer Science</div>
-        <div class="tl-company">National University of Computer and Emerging Sciences (FAST), Islamabad</div>
-        <div class="tl-desc">Pursuing a computing degree with a strong focus on software development, data structures & algorithms, object-oriented programming and full-stack web development (MERN).</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Contact ────────────────────────────────── -->
-  <section id="contact">
-    <div class="contact-inner reveal">
-      <p class="section-label" style="justify-content:center;margin-bottom:1.5rem;">GET IN TOUCH</p>
-      <h2 class="contact-big">Let's build something <em>great</em> together.</h2>
-      <p class="contact-sub">I'm always open to internships, collaborations, or discussing exciting projects in full-stack development, C++, or game programming. Drop me a line anytime.</p>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadtalalakhtar01@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;margin-bottom:2.5rem;">muhammadtalalakhtar01@gmail.com →</a>
-      <div class="contact-links">
-        <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="contact-link">GitHub</a>
-        <a href="https://www.linkedin.com/in/muhammad-talal-akhtar-204320404" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
-        <a href="Muhammad_Talal_Akhtar_Resume.pdf" download="Muhammad_Talal_Akhtar_Resume.pdf" class="contact-link" title="Download Resume">Resume ↓</a>
+    <!-- Right: text -->
+    <div class="about-text-col">
+      <div class="sec-label">Who I Am</div>
+      <h2 class="about-heading rv">Turning ideas into clean, performant code.</h2>
+      <blockquote class="about-quote rv">
+        Precision in engineering. Clarity in code. Impact in every line.
+      </blockquote>
+      <div class="about-body rv">
+        <p>Computer Science student at FAST-NUCES with hands-on experience building scalable full-stack applications. Strong foundation in data structures, algorithms, and object-oriented programming.</p>
+        <p>Experienced in MERN stack with RESTful APIs, JWT-based authentication, and secure user management. Skilled in MongoDB data modeling, modular backend architectures, and optimized API communication. Also built graph-based C++ systems using BFS and DFS &mdash; focused on clean code and production-oriented development.</p>
       </div>
     </div>
-  </section>
 
-  <!-- ── Footer ─────────────────────────────────── -->
-  <footer>
-    <p>© 2026 Muhammad Talal Akhtar. Designed & built with care.</p>
-    <p><a href="#hero">Back to top ↑</a></p>
-  </footer>
+  </div>
+</section>
 
-  <!-- JavaScript File -->
-  <script src="script.js"></script>
+<!-- Skills -->
+<section id="skills">
+  <div class="skills-header rv">
+    <div class="sec-label">What I Do</div>
+    <h2 class="sec-title">Core <em>Expertise</em></h2>
+  </div>
+  <div class="skills-grid">
+    <div class="sk-card">
+      <span class="sk-num">01</span>
+      <span class="sk-icon">&#128295;</span>
+      <div class="sk-title">Full-Stack MERN Development</div>
+      <div class="sk-desc">Scalable web applications with strong focus on backend logic, API design, authentication, and session management.</div>
+      <div class="sk-tags">
+        <span class="sk-tag">MERN Stack</span><span class="sk-tag">React</span><span class="sk-tag">Node.js</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <span class="sk-num">02</span>
+      <span class="sk-icon">&#128451;</span>
+      <div class="sk-title">Data Structures &amp; Algorithms</div>
+      <div class="sk-desc">Strong foundation for efficient problem solving, optimized code, and scalable system design.</div>
+      <div class="sk-tags">
+        <span class="sk-tag">DSA</span><span class="sk-tag">Algorithms</span><span class="sk-tag">Problem Solving</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <span class="sk-num">03</span>
+      <span class="sk-icon">&#127918;</span>
+      <div class="sk-title">Game Development (C++)</div>
+      <div class="sk-desc">2D games with collision detection, enemy AI, OOP design patterns, and complete development lifecycle.</div>
+      <div class="sk-tags">
+        <span class="sk-tag">OOP</span><span class="sk-tag">SFML</span><span class="sk-tag">Game Mechanics</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <span class="sk-num">04</span>
+      <span class="sk-icon">&#128187;</span>
+      <div class="sk-title">Dev Practices &amp; Tools</div>
+      <div class="sk-desc">Modular design, debugging, performance optimization, version control, and project management.</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Git</span><span class="sk-tag">VS Code</span><span class="sk-tag">Trello</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="projects-header rv">
+    <div class="sec-label">Selected Work</div>
+    <h2 class="sec-title">Recent <em>Projects</em></h2>
+  </div>
+  <div class="proj-list">
+    <a href="#" class="proj-item rv">
+      <span class="proj-n">01</span>
+      <div class="proj-info">
+        <h3>Personal Finance Tracker</h3>
+        <p>Full-stack MERN application for secure personal finance management. JWT-based authentication, income/expense tracking, RESTful APIs with React, Node.js, Express &amp; MongoDB.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">MERN Stack</span><span class="proj-tag">React</span><span class="proj-tag">Node.js</span><span class="proj-tag">JWT Auth</span>
+        </div>
+      </div>
+      <span class="proj-arrow">&#8599;</span>
+    </a>
+    <a href="#" class="proj-item rv">
+      <span class="proj-n">02</span>
+      <div class="proj-info">
+        <h3>Advanced Social Network Backend</h3>
+        <p>C++ terminal-based backend using graphs, queues, stacks &amp; heaps. Supports weighted friendships, shortest paths, messaging, community detection, and activity ranking.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">C++</span><span class="proj-tag">DSA</span><span class="proj-tag">OOP</span><span class="proj-tag">Graph Theory</span>
+        </div>
+      </div>
+      <span class="proj-arrow">&#8599;</span>
+    </a>
+    <a href="#" class="proj-item rv">
+      <span class="proj-n">03</span>
+      <div class="proj-info">
+        <h3>Xonix Game (C++ + SFML)</h3>
+        <p>2D arcade-style game with real-time rendering, collision detection, enemy AI behavior, and a complete development lifecycle from design to optimization.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">C++</span><span class="proj-tag">SFML</span><span class="proj-tag">Real-time</span><span class="proj-tag">AI</span>
+        </div>
+      </div>
+      <span class="proj-arrow">&#8599;</span>
+    </a>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <div class="sec-label rv">Education</div>
+  <h2 class="sec-title rv">Academic <em>Background</em></h2>
+  <div class="edu-grid rv">
+    <div class="edu-card highlight">
+      <div class="edu-year">2024 &mdash; 2028</div>
+      <div class="edu-role">Bachelor of Science<br>in Computer Science</div>
+      <div class="edu-inst">National University of Computer and Emerging Sciences (FAST), Islamabad</div>
+      <div class="edu-desc">Pursuing a computing degree with a strong focus on software development, data structures &amp; algorithms, object-oriented programming and full-stack web development (MERN).</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">Current Focus</div>
+      <div class="edu-role">Building &amp;<br>Learning</div>
+      <div class="edu-inst">Active projects &middot; Open to internships</div>
+      <div class="edu-desc">Actively developing full-stack MERN applications and C++ systems. Open to internship opportunities, collaborations, and exciting engineering challenges in software development and game programming.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="contact-inner rv">
+    <h2 class="contact-big">
+      Let&rsquo;s Build
+      <span class="italic-line">Something Great</span>
+    </h2>
+    <p class="contact-sub">
+      Open to internships, collaborations, and exciting projects in full-stack development, C++, or game programming. Drop me a line.
+    </p>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadtalalakhtar01@gmail.com"
+       target="_blank" rel="noopener noreferrer" class="contact-email">
+      muhammadtalalakhtar01@gmail.com &rarr;
+    </a>
+    <div class="contact-links">
+      <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="c-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/muhammad-talal-akhtar-204320404" target="_blank" rel="noopener noreferrer" class="c-link">LinkedIn</a>
+      <a href="Muhammad_Talal_Akhtar_Resume.pdf" download="Muhammad_Talal_Akhtar_Resume.pdf" class="c-link">Resume &darr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Muhammad Talal Akhtar &mdash; Designed &amp; built with care.</p>
+  <p><a href="#hero">Back to top &uarr;</a></p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

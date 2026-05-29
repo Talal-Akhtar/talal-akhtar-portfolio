@@ -1,54 +1,96 @@
-// ── Cursor ──────────────────────────────────────
-const cursor = document.getElementById('cursor');
-const dot    = cursor.querySelector('.dot');
-const ring   = cursor.querySelector('.ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
+/* ════════════════════════════════════════════════════
+   TALAL AKHTAR — PORTFOLIO JS
+   ════════════════════════════════════════════════════ */
 
-// Detect if device supports touch
-const isTouchDevice = () => {
-  return (('ontouchstart' in window) ||
-          (navigator.maxTouchPoints > 0) ||
-          (navigator.msMaxTouchPoints > 0));
-};
+/* ── Loader ──────────────────────────────────────── */
+(function () {
+  const loader  = document.getElementById('loader');
+  const counter = document.getElementById('lcount');
+  const bar     = document.getElementById('lbar');
+  let count = 0;
+  const step = 1000 / 60;
+  const inc  = 100 / (1800 / step);
 
-// Hide custom cursor on touch devices
-if (isTouchDevice()) {
-  cursor.style.display = 'none';
-  document.body.style.cursor = 'auto';
-} else {
+  const iv = setInterval(() => {
+    count = Math.min(100, count + inc + Math.random() * inc * 0.4);
+    const n = Math.floor(count);
+    counter.textContent = n;
+    bar.style.width = n + '%';
+    if (n >= 100) {
+      clearInterval(iv);
+      counter.textContent = '100';
+      bar.style.width = '100%';
+      setTimeout(() => {
+        loader.style.transition = 'transform 0.9s cubic-bezier(0.76,0,0.24,1), opacity 0.5s';
+        loader.style.transform  = 'translateY(-100%)';
+        loader.style.opacity    = '0';
+        setTimeout(() => loader.remove(), 950);
+      }, 260);
+    }
+  }, step);
+})();
+
+/* ── Custom Cursor ───────────────────────────────── */
+(function () {
+  const cur  = document.getElementById('cur');
+  const dot  = cur.querySelector('.c-dot');
+  const ring = cur.querySelector('.c-ring');
+
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    cur.style.display = 'none';
+    document.body.style.cursor = 'auto';
+    return;
+  }
+
+  let mx = 0, my = 0, rx = 0, ry = 0;
   document.addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
-    dot.style.left  = mx + 'px';
-    dot.style.top   = my + 'px';
+    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
   });
-
-  (function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(animRing);
+  (function loop() {
+    rx += (mx - rx) * 0.1; ry += (my - ry) * 0.1;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(loop);
   })();
-}
+})();
 
-// ── Navbar scroll ───────────────────────────────
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
+/* ── Topbar pin ──────────────────────────────────── */
+(function () {
+  const bar = document.getElementById('topbar');
+  window.addEventListener('scroll', () =>
+    bar.classList.toggle('pinned', window.scrollY > 60),
+    { passive: true }
+  );
+})();
 
-// ── Scroll reveal ───────────────────────────────
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      // Stagger children if skill cards
-      const cards = e.target.querySelectorAll('.skill-card');
-      cards.forEach((c, i) => {
-        setTimeout(() => c.classList.add('visible'), i * 80);
-      });
-    }
-  });
-}, { threshold: 0.12 });
-reveals.forEach(r => observer.observe(r));
+/* ── Scroll Reveal ───────────────────────────────── */
+(function () {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('on');
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+  /* Skill cards stagger */
+  const cobs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (!e.isIntersecting) return;
+      setTimeout(() => e.target.classList.add('on'), i * 110);
+      cobs.unobserve(e.target);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.sk-card').forEach(c => cobs.observe(c));
+})();
+
+/* ── Hero watermark parallax ─────────────────────── */
+(function () {
+  const wm = document.querySelector('.hero-watermark');
+  if (!wm) return;
+  window.addEventListener('scroll', () => {
+    wm.style.transform = `translateY(calc(-50% + ${window.scrollY * 0.3}px))`;
+  }, { passive: true });
+})();
