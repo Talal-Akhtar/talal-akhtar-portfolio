@@ -1,264 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Muhammad Talal Akhtar — Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Talal Akhtar — Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Loader -->
-<div id="loader">
-  <div class="loader-counter" id="lcount">0</div>
-  <div class="loader-bar-wrap"><div class="loader-bar" id="lbar"></div></div>
-  <div class="loader-label">INITIALISING PORTFOLIO</div>
-</div>
-
-<!-- Cursor -->
-<div id="cur"><div class="c-dot"></div><div class="c-ring"></div></div>
-
-<!-- Nav -->
-<nav id="topbar">
-  <a href="#hero" class="tb-logo">T<span>.</span>AKHTAR</a>
-  <ul class="tb-nav">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="Muhammad_Talal_Akhtar_Resume.pdf" download title="Download Resume">Resume</a></li>
-  </ul>
-  <div class="tb-right">
-    <a href="#contact" class="tb-cta"><span>Get In Touch</span></a>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section id="hero">
-  <div class="hero-rule"></div>
-  <div class="hero-watermark">TA</div>
-  <div class="hero-inner">
-    <p class="hero-eyebrow">
-      <span class="hero-eyebrow-line"></span>
-      <span class="hero-eyebrow-text">Aspiring Software Developer &middot; FAST-NUCES </span>
-    </p>
-    <h1 class="hero-name">
-      <span class="ln"><span class="wd">Hello,</span></span>
-      <span class="ln"><span class="wd">I&rsquo;m <span class="italic-name">Talal Akhtar</span></span></span>
-    </h1>
-    <div class="hero-bottom">
-      <p class="hero-desc"></p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn-fill"><span>View Projects &rarr;</span></a>
-        <a href="#contact" class="btn-outline">Let&rsquo;s Talk</a>
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">T<span>A</span></div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="lbar"></div>
       </div>
+      <div class="loader-pct" id="lcount">0</div>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-tick"></div>
-    Scroll Down
+
+  <!-- CURSOR -->
+  <div id="cursor">
+    <div class="cur-dot"></div>
+    <div class="cur-outline"></div>
   </div>
-</section>
 
-<!-- Marquee -->
-<div class="marquee-strip">
-  <div class="marquee-track">
-    <span class="marquee-item"><i>&#10022;</i> C++</span>
-    <span class="marquee-item"><i>&#10022;</i> MERN Stack</span>
-    <span class="marquee-item"><i>&#10022;</i> JavaScript</span>
-    <span class="marquee-item"><i>&#10022;</i> SFML</span>
-    <span class="marquee-item"><i>&#10022;</i> React</span>
-    <span class="marquee-item"><i>&#10022;</i> Node.js</span>
-    <span class="marquee-item"><i>&#10022;</i> Git</span>
-    <span class="marquee-item"><i>&#10022;</i> OOP</span>
-    <span class="marquee-item"><i>&#10022;</i> MongoDB</span>
-    <span class="marquee-item"><i>&#10022;</i> Express</span>
-    <span class="marquee-item"><i>&#10022;</i> C++</span>
-    <span class="marquee-item"><i>&#10022;</i> MERN Stack</span>
-    <span class="marquee-item"><i>&#10022;</i> JavaScript</span>
-    <span class="marquee-item"><i>&#10022;</i> SFML</span>
-    <span class="marquee-item"><i>&#10022;</i> React</span>
-    <span class="marquee-item"><i>&#10022;</i> Node.js</span>
-    <span class="marquee-item"><i>&#10022;</i> Git</span>
-    <span class="marquee-item"><i>&#10022;</i> OOP</span>
-    <span class="marquee-item"><i>&#10022;</i> MongoDB</span>
-    <span class="marquee-item"><i>&#10022;</i> Express</span>
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">T<span class="dot">.</span>Akhtar</a>
+    <ul class="nav-links">
+      <li><a href="#about" class="nl">About</a></li>
+      <li><a href="#skills" class="nl">Skills</a></li>
+      <li><a href="#projects" class="nl">Projects</a></li>
+      <li><a href="#education" class="nl">Education</a></li>
+      <li><a href="Muhammad_Talal_Akhtar_Resume.pdf" download class="nl">Résumé</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">
+      <span>Let's Talk</span>
+      <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+        <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </a>
+    <button class="nav-burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" aria-hidden="true">
+    <ul>
+      <li><a href="#about" class="mm-link">About</a></li>
+      <li><a href="#skills" class="mm-link">Skills</a></li>
+      <li><a href="#projects" class="mm-link">Projects</a></li>
+      <li><a href="#education" class="mm-link">Education</a></li>
+      <li><a href="Muhammad_Talal_Akhtar_Resume.pdf" download class="mm-link">Résumé</a></li>
+      <li><a href="#contact" class="mm-link mm-cta">Let's Talk</a></li>
+    </ul>
   </div>
-</div>
 
-<!-- About — Redesigned with Circle Portrait -->
-<section id="about" class="rv">
-  <div class="about-inner">
+  <!-- HERO -->
+  <section id="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
 
-    <!-- Left: circular portrait + stats -->
-    <div class="about-photo-col rv">
-      <div class="portrait-frame">
-        <div class="portrait-circle">
-          <img src="Picture.png" alt="Muhammad Talal Akhtar">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Available for internships &amp; freelance
+      </div>
+
+      <h1 class="hero-name">
+        <span class="hero-line"><span class="hero-word reveal-word" style="--d:0ms">Hello,</span></span>
+        <span class="hero-line">
+          <span class="hero-word reveal-word" style="--d:120ms">I'm&nbsp;</span><span
+            class="hero-word accent-word reveal-word" style="--d:240ms">Talal Akhtar</span>
+        </span>
+      </h1>
+
+      <div class="hero-role reveal">
+        <span class="role-prefix">// </span><span id="typed"></span><span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-sub reveal">
+        CS student at FAST-NUCES building scalable full-stack apps, high-performance C++ systems, and clean, purposeful
+        software.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn-primary">
+          <span>View my work</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get in touch</a>
+      </div>
+
+
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>C++</span><span>MERN Stack</span><span>React</span><span>Node.js</span>
+      <span>MongoDB</span><span>Express</span><span>JWT Auth</span><span>REST APIs</span>
+      <span>Git</span><span>SFML</span><span>OOP</span><span>DSA</span>
+      <span>C++</span><span>MERN Stack</span><span>React</span><span>Node.js</span>
+      <span>MongoDB</span><span>Express</span><span>JWT Auth</span><span>REST APIs</span>
+      <span>Git</span><span>SFML</span><span>OOP</span><span>DSA</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-photo reveal">
+          <div class="photo-wrap">
+            <img src="Muhammad Talal.png" alt="Muhammad Talal Akhtar" loading="lazy">
+            <div class="photo-overlay"></div>
+          </div>
+
+        </div>
+
+        <div class="about-text">
+          <div class="section-label reveal">About me</div>
+          <h2 class="about-heading reveal">Turning <em>ideas</em> into clean,<br><em>performant</em> code.</h2>
+          <div class="about-body reveal">
+            <p>CS student at FAST-NUCES with hands-on experience building scalable full-stack applications. My
+              foundation spans data structures, algorithms, and OOP across C++ and JavaScript.</p>
+            <p>On the web side I build with the MERN stack — RESTful APIs, JWT authentication, MongoDB data modeling,
+              and modular backend architectures. On the systems side I've built graph-based C++ backends using BFS/DFS
+              with custom data structures.</p>
+            <p>I care about clean code, good architecture, and software that actually ships.</p>
+          </div>
+          <div class="about-tags reveal">
+            <span class="tag">Full-Stack Dev</span>
+            <span class="tag">Systems Programming</span>
+            <span class="tag">Open to internships</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label reveal">What I do</div>
+        <h2 class="section-title reveal">Core <em>Expertise</em></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="sk-card reveal">
+          <div class="sk-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5" />
+              <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5" />
+              <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5" />
+              <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3>Full-Stack MERN</h3>
+          <p>Scalable web apps with strong backend logic, API design, and JWT authentication from schema to deployment.
+          </p>
+          <div class="sk-tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span></div>
+        </div>
+
+        <div class="sk-card reveal">
+          <div class="sk-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3L2 7.5L12 12L22 7.5L12 3Z" stroke="currentColor" stroke-width="1.5"
+                stroke-linejoin="round" />
+              <path d="M2 12L12 16.5L22 12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M2 16.5L12 21L22 16.5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Data Structures &amp; Algorithms</h3>
+          <p>Efficient problem solving — graphs, trees, hash tables, BFS/DFS, and system-level thinking applied to real
+            projects.</p>
+          <div class="sk-tags"><span>C++</span><span>Graph Theory</span><span>Optimization</span></div>
+        </div>
+
+        <div class="sk-card reveal">
+          <div class="sk-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <polygon points="5,3 19,12 5,21" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Game Development</h3>
+          <p>2D games with collision detection, enemy AI, OOP design patterns, and real-time rendering via SFML.</p>
+          <div class="sk-tags"><span>C++</span><span>SFML</span><span>Game Mechanics</span></div>
+        </div>
+
+        <div class="sk-card reveal">
+          <div class="sk-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" />
+              <path
+                d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M19.1 4.9l-2.1 2.1M7.1 16.9l-2.1 2.1"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Dev Practices &amp; Tools</h3>
+          <p>Version control, modular architecture, debugging workflows, and production-minded code quality.</p>
+          <div class="sk-tags"><span>Git</span><span>VS Code</span><span>REST</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label reveal">Selected work</div>
+        <h2 class="section-title reveal">Recent <em>Projects</em></h2>
+      </div>
+      <div class="proj-list">
+
+        <!-- FinTrack — live link + GitHub; update hrefs once you have the URLs -->
+        <div class="proj-card reveal">
+          <div class="proj-card-inner">
+            <div class="proj-meta">
+              <span class="proj-num">01</span>
+              <div class="proj-stack"><span>MERN</span><span>JWT</span><span>REST API</span></div>
+            </div>
+            <h3 class="proj-title">Personal Finance Tracker</h3>
+            <p class="proj-desc">Full-stack MERN application for secure personal finance management. JWT-based
+              authentication, income/expense tracking, protected API routes, and a responsive React dashboard.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="proj-link">
+                View on GitHub
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="proj-gh"
+                aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-card-glow"></div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-card-inner">
+            <div class="proj-meta">
+              <span class="proj-num">02</span>
+              <div class="proj-stack"><span>C++</span><span>DSA</span><span>OOP</span></div>
+            </div>
+            <h3 class="proj-title">Advanced Social Network Backend</h3>
+            <p class="proj-desc">Terminal-based C++ backend using custom graphs, BSTs, hash tables, queues and heaps.
+              Supports weighted friendships, shortest paths, messaging, and community detection algorithms.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="proj-link">
+                View on GitHub
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="proj-gh"
+                aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-card-glow"></div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-card-inner">
+            <div class="proj-meta">
+              <span class="proj-num">03</span>
+              <div class="proj-stack"><span>C++</span><span>SFML</span><span>Game AI</span></div>
+            </div>
+            <h3 class="proj-title">Xonix Game (C++ + SFML)</h3>
+            <p class="proj-desc">2D arcade-style game with real-time rendering, collision detection, and enemy AI
+              behavior. Built end-to-end with OOP design patterns and performance optimization in C++ with SFML.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="proj-link">
+                View on GitHub
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="proj-gh"
+                aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="proj-card-glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label reveal">Background</div>
+        <h2 class="section-title reveal">Academic <em>Journey</em></h2>
+      </div>
+      <div class="edu-timeline">
+
+        <div class="edu-item reveal">
+          <div class="edu-year-col">
+            <span class="edu-year">2024–2028</span>
+            <div class="edu-dot"></div>
+            <div class="edu-line"></div>
+          </div>
+          <div class="edu-content">
+            <div class="edu-card">
+              <div class="edu-badge">Current</div>
+              <h3>B.S. Computer Science</h3>
+              <p class="edu-inst">National University of Computer &amp; Emerging Sciences (FAST-NUCES), Islamabad</p>
+              <p class="edu-desc">Strong focus on software development, data structures &amp; algorithms, OOP, and
+                full-stack web development. Actively building production-level projects alongside coursework.</p>
+              <div class="edu-tags"><span>DSA</span><span>OOP</span><span>MERN</span><span>C++</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item reveal">
+          <div class="edu-year-col">
+            <span class="edu-year">Now</span>
+            <div class="edu-dot active"></div>
+          </div>
+          <div class="edu-content">
+            <div class="edu-card accent-card">
+              <h3>Building &amp; Learning</h3>
+              <p class="edu-inst">Active projects · Open to internships · Islamabad</p>
+              <p class="edu-desc">Developing full-stack MERN apps and C++ systems. Seeking internships, collaborations,
+                and engineering challenges in software development and game programming.</p>
+              <a href="#contact" class="edu-cta">Let's connect →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="orb orb-c1"></div>
+    <div class="orb orb-c2"></div>
+    <div class="container">
+      <div class="contact-inner">
+        <div class="section-label reveal">Contact</div>
+        <h2 class="contact-heading reveal">
+          Let's build something<br><em>great together.</em>
+        </h2>
+        <p class="contact-sub reveal">
+          Open to internships, freelance projects, and collaborations in full-stack development, C++, or game
+          programming.
+        </p>
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadtalalakhtar01@gmail.com" target="_blank"
+          rel="noopener noreferrer" class="email-link reveal">
+          <!-- Gmail icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 48 48">
+            <path fill="#EA4335" d="M24 24L4 10.5V38a2 2 0 002 2h36a2 2 0 002-2V10.5L24 24z" />
+            <path fill="#FBBC05" d="M44 10.5l-20 13.5L4 10.5" />
+            <path fill="#34A853" d="M4 10.5A2 2 0 016 8h36a2 2 0 012 2.5L24 24 4 10.5z" />
+            <path fill="#4285F4" d="M44 10.5A2 2 0 0042 8H6a2 2 0 00-2 2.5L24 24l20-13.5z" />
+            <path fill="#C5221F" d="M4 10.5V38a2 2 0 002 2h4V18L4 10.5z" />
+            <path fill="#FBBC05" d="M44 10.5L38 18v22h4a2 2 0 002-2V10.5z" />
+          </svg>
+          <span>muhammadtalalakhtar01@gmail.com</span>
+        </a>
+
+        <div class="social-links reveal">
+
+          <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="social-btn github">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>GitHub</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/muhammad-talal-akhtar-204320404" target="_blank"
+            rel="noopener noreferrer" class="social-btn linkedin">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="Muhammad_Talal_Akhtar_Resume.pdf" download="Muhammad_Talal_Akhtar_Resume.pdf"
+            class="social-btn resume">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor"
+                stroke-width="1.5" stroke-linejoin="round" />
+              <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+              <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <span>Résumé</span>
+          </a>
+
         </div>
       </div>
-      <div class="portrait-label">
-        <div class="portrait-label-name">Muhammad Talal Akhtar</div>
-        <div class="portrait-label-sub">FAST-NUCES &middot; Islamabad</div>
-      </div>
     </div>
+  </section>
 
-    <!-- Right: text -->
-    <div class="about-text-col">
-      <div class="sec-label">Who I Am</div>
-      <h2 class="about-heading rv">Turning ideas into clean, performant code.</h2>
-      <blockquote class="about-quote rv">
-        Precision in engineering. Clarity in code. Impact in every line.
-      </blockquote>
-      <div class="about-body rv">
-        <p>Computer Science student at FAST-NUCES with hands-on experience building scalable full-stack applications using C++ and JavaScript. Strong foundation in data structures, algorithms, and object-oriented programming.</p>
-        <p>Experienced in MERN stack with RESTful APIs, JWT-based authentication, and secure user management. Skilled in MongoDB data modeling, modular backend architectures, and optimized API communication. Also built graph-based C++ systems using BFS and DFS &mdash; focused on clean code and production-oriented development.</p>
-      </div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Muhammad Talal Akhtar</span>
+      <span class="footer-built">Designed &amp; built with care</span>
+      <a href="#hero" class="footer-top">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M8 13V3M8 3L3 8M8 3l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Back to top
+      </a>
     </div>
+  </footer>
 
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills">
-  <div class="skills-header rv">
-    <div class="sec-label">What I Do</div>
-    <h2 class="sec-title">Core <em>Expertise</em></h2>
-  </div>
-  <div class="skills-grid">
-    <div class="sk-card">
-      <span class="sk-num">01</span>
-      <span class="sk-icon">&#128295;</span>
-      <div class="sk-title">Full-Stack MERN Development</div>
-      <div class="sk-desc">Scalable web applications with strong focus on backend logic, API design, authentication, and session management.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">MERN Stack</span><span class="sk-tag">React</span><span class="sk-tag">Node.js</span>
-      </div>
-    </div>
-    <div class="sk-card">
-      <span class="sk-num">02</span>
-      <span class="sk-icon">&#128451;</span>
-      <div class="sk-title">Data Structures &amp; Algorithms</div>
-      <div class="sk-desc">Strong foundation for efficient problem solving, optimized code, and scalable system design.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">DSA</span><span class="sk-tag">Algorithms</span><span class="sk-tag">Problem Solving</span>
-      </div>
-    </div>
-    <div class="sk-card">
-      <span class="sk-num">03</span>
-      <span class="sk-icon">&#127918;</span>
-      <div class="sk-title">Game Development (C++)</div>
-      <div class="sk-desc">2D games with collision detection, enemy AI, OOP design patterns, and complete development lifecycle.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">OOP</span><span class="sk-tag">SFML</span><span class="sk-tag">Game Mechanics</span>
-      </div>
-    </div>
-    <div class="sk-card">
-      <span class="sk-num">04</span>
-      <span class="sk-icon">&#128187;</span>
-      <div class="sk-title">Dev Practices &amp; Tools</div>
-      <div class="sk-desc">Modular design, debugging, performance optimization, version control, and project management.</div>
-      <div class="sk-tags">
-        <span class="sk-tag">Git</span><span class="sk-tag">VS Code</span><span class="sk-tag">Trello</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects">
-  <div class="projects-header rv">
-    <div class="sec-label">Selected Work</div>
-    <h2 class="sec-title">Recent <em>Projects</em></h2>
-  </div>
-  <div class="proj-list">
-    <a href="#" class="proj-item rv">
-      <span class="proj-n">01</span>
-      <div class="proj-info">
-        <h3>Personal Finance Tracker</h3>
-        <p>Full-stack MERN application for secure personal finance management. JWT-based authentication, income/expense tracking, RESTful APIs with React, Node.js, Express &amp; MongoDB.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">MERN Stack</span><span class="proj-tag">React</span><span class="proj-tag">Node.js</span><span class="proj-tag">JWT Auth</span>
-        </div>
-      </div>
-      <span class="proj-arrow">&#8599;</span>
-    </a>
-    <a href="#" class="proj-item rv">
-      <span class="proj-n">02</span>
-      <div class="proj-info">
-        <h3>Advanced Social Network Backend</h3>
-        <p>C++ terminal-based backend using graphs, queues, stacks &amp; heaps. Supports weighted friendships, shortest paths, messaging, community detection, and activity ranking.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">C++</span><span class="proj-tag">DSA</span><span class="proj-tag">OOP</span><span class="proj-tag">Graph Theory</span>
-        </div>
-      </div>
-      <span class="proj-arrow">&#8599;</span>
-    </a>
-    <a href="#" class="proj-item rv">
-      <span class="proj-n">03</span>
-      <div class="proj-info">
-        <h3>Xonix Game (C++ + SFML)</h3>
-        <p>2D arcade-style game with real-time rendering, collision detection, enemy AI behavior, and a complete development lifecycle from design to optimization.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">C++</span><span class="proj-tag">SFML</span><span class="proj-tag">Real-time</span><span class="proj-tag">AI</span>
-        </div>
-      </div>
-      <span class="proj-arrow">&#8599;</span>
-    </a>
-  </div>
-</section>
-
-<!-- Education -->
-<section id="education">
-  <div class="sec-label rv">Education</div>
-  <h2 class="sec-title rv">Academic <em>Background</em></h2>
-  <div class="edu-grid rv">
-    <div class="edu-card highlight">
-      <div class="edu-year">2024 &mdash; 2028</div>
-      <div class="edu-role">Bachelor of Science<br>in Computer Science</div>
-      <div class="edu-inst">National University of Computer and Emerging Sciences (FAST), Islamabad</div>
-      <div class="edu-desc">Pursuing a computing degree with a strong focus on software development, data structures &amp; algorithms, object-oriented programming and full-stack web development (MERN).</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-year">Current Focus</div>
-      <div class="edu-role">Building &amp;<br>Learning</div>
-      <div class="edu-inst">Active projects &middot; Open to internships</div>
-      <div class="edu-desc">Actively developing full-stack MERN applications and C++ systems. Open to internship opportunities, collaborations, and exciting engineering challenges in software development and game programming.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="contact-inner rv">
-    <h2 class="contact-big">
-      Let&rsquo;s Build
-      <span class="italic-line">Something Great</span>
-    </h2>
-    <p class="contact-sub">
-      Open to internships, collaborations, and exciting projects in full-stack development, C++, or game programming. Drop me a line.
-    </p>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadtalalakhtar01@gmail.com"
-       target="_blank" rel="noopener noreferrer" class="contact-email">
-      muhammadtalalakhtar01@gmail.com &rarr;
-    </a>
-    <div class="contact-links">
-      <a href="https://github.com/Talal-Akhtar" target="_blank" rel="noopener noreferrer" class="c-link">GitHub</a>
-      <a href="https://www.linkedin.com/in/muhammad-talal-akhtar-204320404" target="_blank" rel="noopener noreferrer" class="c-link">LinkedIn</a>
-      <a href="Muhammad_Talal_Akhtar_Resume.pdf" download="Muhammad_Talal_Akhtar_Resume.pdf" class="c-link">Resume &darr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2026 Muhammad Talal Akhtar &mdash; Designed &amp; built with care.</p>
-  <p><a href="#hero">Back to top &uarr;</a></p>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
