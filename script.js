@@ -1,8 +1,4 @@
-/* ═══════════════════════════════════════════════════
-   TALAL AKHTAR — PORTFOLIO JS  (optimised)
-   ═══════════════════════════════════════════════════ */
 
-/* ── Helpers ──────────────────────────────────────── */
 const $ = id => document.getElementById(id);
 const $$ = sel => document.querySelectorAll(sel);
 const isTouch = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -34,7 +30,6 @@ const isTouch = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   }, step);
 })();
 
-/* ── Hero reveal (runs once after loader exits) ─── */
 function heroReveal() {
   $$('#hero .reveal, #hero .reveal-word').forEach((el, i) =>
     setTimeout(() => el.classList.add('visible'), i * 80)
@@ -155,8 +150,6 @@ function heroReveal() {
 
   const roles = [
     'Full-Stack Developer',
-    'MERN Stack Engineer',
-    'C++ Systems Builder',
     'CS Student @ FAST-NUCES',
     'Open to Internships',
   ];
