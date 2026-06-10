@@ -151,7 +151,7 @@ function heroReveal() {
   const roles = [
     'Full-Stack Developer',
     'CS Student @ FAST-NUCES',
-    'Open to Internships',
+    'Open to Internships and Junior Roles',
   ];
 
   let ri = 0, ci = 0, del = false;
