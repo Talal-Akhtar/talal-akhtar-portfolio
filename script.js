@@ -220,3 +220,129 @@ function heroReveal() {
     });
   }, { passive: true });
 })();
+
+const skillMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ── CURSOR — fixed: dot instant, ring fast lerp ── */
+(function fixCursor() {
+  if (isTouch()) return;
+  const dot  = document.querySelector('.cur-dot');
+  const ring = document.querySelector('.cur-outline');
+  if (!dot || !ring) return;
+
+  /* Remove any CSS transition from ring so rAF fully controls it */
+  ring.style.transition = 'width 250ms ease-out, height 250ms ease-out, border-color 200ms ease-out';
+
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    /* Dot: snap to exact position immediately */
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  }, { passive: true });
+
+  (function loop() {
+
+    rx += (mx - rx) * 0.35;
+    ry += (my - ry) * 0.35;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ── SCROLL PROGRESS BAR ───────────────────────── */
+(function scrollProgress() {
+  const bar = document.createElement('div');
+  bar.id = 'scroll-progress';
+  document.body.appendChild(bar);
+
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+  }, { passive: true });
+})();
+
+/* ── CARD STAGGER REVEAL ───────────────────────── */
+(function cardReveal() {
+  /* Skill cards */
+  const skillObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.querySelectorAll('.sk-card').forEach((el, i) =>
+        setTimeout(() => el.classList.add('visible'), i * 100)
+      );
+      skillObs.unobserve(entry.target);
+    });
+  }, { threshold: 0.05 });
+  const sg = document.querySelector('.skills-grid');
+  if (sg) skillObs.observe(sg);
+
+  /* Project cards */
+  const projObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.querySelectorAll('.proj-card').forEach((el, i) =>
+        setTimeout(() => el.classList.add('visible'), i * 110)
+      );
+      projObs.unobserve(entry.target);
+    });
+  }, { threshold: 0.05 });
+  const pl = document.querySelector('.proj-list');
+  if (pl) projObs.observe(pl);
+
+  /* Education items */
+  const eduObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      eduObs.unobserve(e.target);
+    });
+  }, { threshold: 0.1 });
+  $$('.edu-item').forEach(el => eduObs.observe(el));
+
+  /* Section labels — trigger underline draw */
+  const labelObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      labelObs.unobserve(e.target);
+    });
+  }, { threshold: 0.5 });
+  $$('.section-label').forEach(el => labelObs.observe(el));
+})();
+
+/* ── MAGNETIC HOVER — ±4px desktop only ────────── */
+(function magneticHover() {
+  if (!skillMotion || isTouch()) return;
+
+  $$('.btn-primary, .btn-ghost, .nav-cta, .social-btn').forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const r  = el.getBoundingClientRect();
+      const dx = ((e.clientX - (r.left + r.width  / 2)) / (r.width  / 2)) * 4;
+      const dy = ((e.clientY - (r.top  + r.height / 2)) / (r.height / 2)) * 3;
+      /* Blend with existing hover transform using custom props */
+      el.style.setProperty('--mx', dx + 'px');
+      el.style.setProperty('--my', dy + 'px');
+      el.style.transform = `translate(${dx}px, ${dy}px)`;
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transition = 'transform 350ms ease-out, box-shadow 200ms ease-out';
+      el.style.transform  = '';
+      el.style.setProperty('--mx', '0px');
+      el.style.setProperty('--my', '0px');
+      setTimeout(() => { el.style.transition = ''; }, 360);
+    });
+  });
+})();
+
+/* ── BACK TO TOP — smooth scroll ───────────────── */
+(function backToTop() {
+  const btn = document.querySelector('.footer-top');
+  if (!btn) return;
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
